@@ -67,10 +67,7 @@ fi
 
 
 echo "Starting MariaDB server in recovery mode..."
-
-$MARIADBD_EXECUTABLE \
-    --datadir="$HOME/mysql" \
-    --innodb-force-recovery=1 &
+$MARIADBD_EXECUTABLE --datadir="$HOME/mysql" &
 PID=$!
 
 echo "Waiting for MariaDB to start/recover..."
