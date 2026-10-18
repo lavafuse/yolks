@@ -1,16 +1,9 @@
-# ---------------------------------------------------------
-# MariaDB Yolk for Pterodactyl
-#
-# MariaDB is a community-developed, commercially supported
-# fork of the MySQL relational database management system,
-# intended to remain free and open-source software under
-# the GNU General Public
-#
-# ---------------------------------------------------------
+# ----------------------------------
+# Environment: MariaDB
+# ----------------------------------
+FROM mariadb:12.3
 
-FROM mariadb:12.0
-
-LABEL author="Daniel Barton" maintainer="danielb@purpleflaghosting.com"
+LABEL author="Lavafuse" maintainer="contact@lavafuse.net"
 
 ENV DEBIAN_FRONTEND=noninteractive
 

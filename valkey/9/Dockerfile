@@ -1,20 +1,20 @@
 # ----------------------------------
-# Environment: valkey
+# Environment: Valkey
 # ----------------------------------
-FROM    --platform=$TARGETOS/$TARGETARCH valkey/valkey:9-trixie
+FROM --platform=$TARGETOS/$TARGETARCH valkey/valkey:9-trixie
 
-LABEL   author="Lavafuse" maintainer="contact@lavafuse.net"
+LABEL author="Lavafuse" maintainer="contact@lavafuse.net"
 
-ENV     DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN     apt -y update && \
+RUN apt -y update && \
         apt -y upgrade && \
         apt -y install iproute2 && \
         useradd -d /home/container -m container -s /bin/bash
 
-USER    container
-ENV     USER=container HOME=/home/container
+USER container
+ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
-COPY    ./entrypoint.sh /entrypoint.sh
-CMD     ["/bin/bash", "/entrypoint.sh"]
+COPY ./entrypoint.sh /entrypoint.sh
+CMD ["/bin/bash", "/entrypoint.sh"]
