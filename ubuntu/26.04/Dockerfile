@@ -25,6 +25,7 @@ RUN apt-get update \
         xz-utils \
         zlib1g \
         zstd \
+        libatomic1 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/container
